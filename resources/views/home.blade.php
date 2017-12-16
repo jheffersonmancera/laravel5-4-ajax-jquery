@@ -27,7 +27,9 @@
                                 <td>{{$item->name}}</td>
                                 <td width="20px">
                                     {!!Form::open(['route'=>['destroyProduct',$item->id],'method'=>'DELETE'])!!}
-                                        <a href="#">Eliminar</a>
+                                        <a href="#" class="btn-delete" title="Eliminar">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </a>
                                     {!! Form::close()!!}
                                 </td>
                             </tr>
@@ -42,4 +44,9 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+<script src="{{ asset('js/script.js') }}"></script>
+
 @endsection

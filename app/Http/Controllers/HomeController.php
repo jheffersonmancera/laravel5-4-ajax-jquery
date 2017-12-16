@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function destroyProduct(Request $request, $id)
     {
-        if ($request->ajax) {
+        if ($request->ajax()) {
             $product = \App\Product::find($id);
             $product->delete();
             $products_total=\App\Product::all()->count();
@@ -37,7 +37,7 @@ class HomeController extends Controller
 
             return response()->json([
                 'total' => $products_total,
-                'message' => $product->name . 'ha sido eliminado'
+                'message' => $product->name .'ha sido eliminado'
             ]);
 
 
